@@ -2,26 +2,55 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 140 33% 96%; /* grably-offwhite */
+    --foreground: 120 27% 14%; /* grably-text */
+
+    --card: 0 0% 100%;
+    --card-foreground: 120 27% 14%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 120 27% 14%;
+
+    --primary: 145 63% 49%; /* grably-accent */
+    --primary-foreground: 150 51% 12%; /* grably-dark */
+
+    --secondary: 134 41% 88%; /* grably-lightgrn */
+    --secondary-foreground: 150 51% 12%;
+
+    --muted: 205 24% 92%; /* grably-gray-ish */
+    --muted-foreground: 140 19% 30%; /* grably-textmid */
+
+    --accent: 134 41% 88%;
+    --accent-foreground: 150 51% 12%;
+
+    --destructive: 6 63% 46%; /* grably-warn */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 205 24% 92%; /* grably-gray */
+    --input: 205 24% 92%;
+    --ring: 145 63% 49%; /* grably-accent */
+
+    --radius: 0.5rem;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-grably-offwhite text-grably-text font-sans antialiased;
+  }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  /* scroll-margin so sticky navbar doesn't overlap anchored sections */
+  [id] {
+    scroll-margin-top: 5rem;
   }
 }

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "grably.io" }],
+      "destination": "https://grably.ca/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "www.grably.io" }],
+      "destination": "https://grably.ca/:path*",
+      "permanent": true
+    }
+  ]
+}
