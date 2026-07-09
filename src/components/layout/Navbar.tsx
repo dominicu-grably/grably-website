@@ -69,7 +69,7 @@ export function Navbar() {
             href="/compliance-check"
             className="text-sm font-medium text-grably-lightgrn transition-colors hover:text-white"
           >
-            Free Compliance Check
+            Compliance Check
           </Link>
           <button
             type="button"
@@ -115,7 +115,7 @@ export function Navbar() {
             onClick={() => setMobileOpen(false)}
             className="rounded px-2 py-3 text-left text-base font-medium text-grably-lightgrn transition-colors hover:bg-grably-mid hover:text-white"
           >
-            Free Compliance Check
+            Compliance Check
           </Link>
           <button
             type="button"
