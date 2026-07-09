@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
 import { scrollToId } from "@/lib/scroll";
@@ -64,6 +65,12 @@ export function Navbar() {
               {link.label}
             </button>
           ))}
+          <Link
+            href="/compliance-check"
+            className="text-sm font-medium text-grably-lightgrn transition-colors hover:text-white"
+          >
+            Free Compliance Check
+          </Link>
           <button
             type="button"
             onClick={() => handleNav("demo-form")}
@@ -103,6 +110,13 @@ export function Navbar() {
               {link.label}
             </button>
           ))}
+          <Link
+            href="/compliance-check"
+            onClick={() => setMobileOpen(false)}
+            className="rounded px-2 py-3 text-left text-base font-medium text-grably-lightgrn transition-colors hover:bg-grably-mid hover:text-white"
+          >
+            Free Compliance Check
+          </Link>
           <button
             type="button"
             onClick={() => handleNav("demo-form")}
