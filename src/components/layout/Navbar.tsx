@@ -24,11 +24,6 @@ export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
 
-  const handleNav = (targetId: string) => {
-    setMobileOpen(false);
-    scrollToId(targetId);
-  };
-
   // Anchor links are real hrefs so they work from any route. When already on
   // the homepage, intercept and smooth-scroll instead of navigating.
   const handleAnchor = (targetId: string) => (e: React.MouseEvent) => {
@@ -51,9 +46,14 @@ export function Navbar() {
 
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 sm:px-8">
         {/* Logo */}
-        <button
-          type="button"
-          onClick={() => handleNav("top")}
+        <Link
+          href="/"
+          onClick={() => {
+            if (pathname === "/") {
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+            setMobileOpen(false);
+          }}
           className="flex items-center"
           aria-label="Grably home"
         >
@@ -65,7 +65,7 @@ export function Navbar() {
             priority
             className="h-8 w-auto"
           />
-        </button>
+        </Link>
 
         {/* Desktop nav */}
         <div className="hidden items-center gap-8 md:flex">
