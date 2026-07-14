@@ -71,6 +71,12 @@ export function Navbar() {
           >
             Compliance Check
           </Link>
+          <Link
+            href="/blog"
+            className="text-sm font-medium text-grably-lightgrn transition-colors hover:text-white"
+          >
+            Blog
+          </Link>
           <button
             type="button"
             onClick={() => handleNav("demo-form")}
@@ -116,6 +122,13 @@ export function Navbar() {
             className="rounded px-2 py-3 text-left text-base font-medium text-grably-lightgrn transition-colors hover:bg-grably-mid hover:text-white"
           >
             Compliance Check
+          </Link>
+          <Link
+            href="/blog"
+            onClick={() => setMobileOpen(false)}
+            className="rounded px-2 py-3 text-left text-base font-medium text-grably-lightgrn transition-colors hover:bg-grably-mid hover:text-white"
+          >
+            Blog
           </Link>
           <button
             type="button"

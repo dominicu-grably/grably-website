@@ -75,8 +75,32 @@ const config: Config = {
       animation: {
         "fade-in-up": "fade-in-up 0.6s ease-out both",
       },
+      typography: ({ theme }: { theme: (path: string) => string }) => ({
+        DEFAULT: {
+          css: {
+            maxWidth: "none",
+            "--tw-prose-body": theme("colors.grably-textmid"),
+            "--tw-prose-headings": theme("colors.grably-text"),
+            "--tw-prose-bold": theme("colors.grably-text"),
+            "--tw-prose-links": theme("colors.grably-accent"),
+            "--tw-prose-quotes": theme("colors.grably-textmid"),
+            "--tw-prose-quote-borders": theme("colors.grably-accent"),
+            "h1, h2, h3, h4, h5, h6": {
+              fontFamily: 'Georgia, Cambria, "Times New Roman", serif',
+            },
+            a: {
+              textDecoration: "none",
+              fontWeight: "600",
+              "&:hover": {
+                color: theme("colors.grably-adk"),
+                textDecoration: "underline",
+              },
+            },
+          },
+        },
+      }),
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
 };
 export default config;

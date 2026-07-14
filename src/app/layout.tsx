@@ -51,6 +51,17 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
+// Site-wide Organization schema (appears on every page). Description is the
+// homepage Hero value prop, verbatim.
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Grably",
+  url: "https://grably.ca",
+  description:
+    "Grably gives licensed BC retailers LCRB-compliant delivery records, driver coordination, and customer communications — automated from the first order.",
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -58,7 +69,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en-CA">
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+      </body>
     </html>
   );
 }

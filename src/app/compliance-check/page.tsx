@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "LCRB Delivery Compliance Checker — Grably",
   description:
     "Find out if your BC cannabis delivery operation is LCRB compliant. 7 questions, 2 minutes, instant results.",
+  alternates: {
+    canonical: "https://grably.ca/compliance-check",
+  },
 };
 
 const TRUST_SIGNALS = [
