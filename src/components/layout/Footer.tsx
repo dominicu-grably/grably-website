@@ -56,8 +56,7 @@ export function Footer() {
 
         {/* Bottom fine print */}
         <p className="mt-10 text-center text-xs text-grably-lightgrn/40">
-          Grably is a trade name of DCU Ventures Limited. © 2026 Grably. All
-          rights reserved.
+          Grably Technologies Inc. © 2026 Grably. All rights reserved.
         </p>
       </div>
     </footer>
