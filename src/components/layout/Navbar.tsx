@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 import { scrollToId } from "@/lib/scroll";
@@ -21,10 +22,23 @@ const NAV_LINKS: NavLink[] = [
 
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname = usePathname();
 
   const handleNav = (targetId: string) => {
     setMobileOpen(false);
     scrollToId(targetId);
+  };
+
+  // Anchor links are real hrefs so they work from any route. When already on
+  // the homepage, intercept and smooth-scroll instead of navigating.
+  const handleAnchor = (targetId: string) => (e: React.MouseEvent) => {
+    if (pathname === "/") {
+      e.preventDefault();
+      scrollToId(targetId);
+    }
+    // else: let Next.js navigate to "/#targetId"; native hash scroll takes over
+    // (scroll-margin-top is global, so the section clears the sticky header).
+    setMobileOpen(false);
   };
 
   return (
@@ -56,14 +70,14 @@ export function Navbar() {
         {/* Desktop nav */}
         <div className="hidden items-center gap-8 md:flex">
           {NAV_LINKS.map((link) => (
-            <button
+            <Link
               key={link.targetId}
-              type="button"
-              onClick={() => handleNav(link.targetId)}
+              href={`/#${link.targetId}`}
+              onClick={handleAnchor(link.targetId)}
               className="text-sm font-medium text-grably-lightgrn transition-colors hover:text-white"
             >
               {link.label}
-            </button>
+            </Link>
           ))}
           <Link
             href="/compliance-check"
@@ -77,13 +91,13 @@ export function Navbar() {
           >
             Blog
           </Link>
-          <button
-            type="button"
-            onClick={() => handleNav("demo-form")}
+          <Link
+            href="/#demo-form"
+            onClick={handleAnchor("demo-form")}
             className="rounded bg-grably-accent px-4 py-2 text-sm font-bold text-grably-dark transition-colors hover:bg-grably-adk"
           >
             Book a Demo
-          </button>
+          </Link>
         </div>
 
         {/* Mobile toggle */}
@@ -107,14 +121,14 @@ export function Navbar() {
       >
         <div className="flex flex-col gap-1 px-5 py-3">
           {NAV_LINKS.map((link) => (
-            <button
+            <Link
               key={link.targetId}
-              type="button"
-              onClick={() => handleNav(link.targetId)}
+              href={`/#${link.targetId}`}
+              onClick={handleAnchor(link.targetId)}
               className="rounded px-2 py-3 text-left text-base font-medium text-grably-lightgrn transition-colors hover:bg-grably-mid hover:text-white"
             >
               {link.label}
-            </button>
+            </Link>
           ))}
           <Link
             href="/compliance-check"
@@ -130,13 +144,13 @@ export function Navbar() {
           >
             Blog
           </Link>
-          <button
-            type="button"
-            onClick={() => handleNav("demo-form")}
+          <Link
+            href="/#demo-form"
+            onClick={handleAnchor("demo-form")}
             className="mt-2 rounded bg-grably-accent px-4 py-3 text-center text-base font-bold text-grably-dark transition-colors hover:bg-grably-adk"
           >
             Book a Demo
-          </button>
+          </Link>
         </div>
       </div>
     </header>
