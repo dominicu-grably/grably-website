@@ -12,6 +12,7 @@ export interface BlogPostMeta {
   date: string;
   excerpt: string;
   author: string;
+  category?: string;
   readingTime?: string;
 }
 
@@ -28,6 +29,7 @@ function parseMeta(slug: string, raw: string): { meta: BlogPostMeta; content: st
       date: String(data.date ?? ""),
       excerpt: String(data.excerpt ?? ""),
       author: String(data.author ?? "Grably Team"),
+      category: data.category ? String(data.category) : undefined,
       readingTime: readingTime(content).text,
     },
     content,

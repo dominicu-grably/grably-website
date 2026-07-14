@@ -45,6 +45,11 @@ export default function BlogIndexPage() {
                   className="rounded-2xl border border-grably-gray bg-white p-6 shadow-sm transition-shadow hover:shadow-md sm:p-8"
                 >
                   <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-grably-textmid">
+                    {post.category && (
+                      <span className="rounded-full bg-grably-lightgrn px-2 py-0.5 text-xs font-medium text-grably-dark">
+                        {post.category}
+                      </span>
+                    )}
                     <time dateTime={post.date}>{formatDate(post.date)}</time>
                     {post.readingTime && (
                       <>
