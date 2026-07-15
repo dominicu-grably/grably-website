@@ -383,6 +383,7 @@ export function ComplianceQuiz() {
   const [firstName, setFirstName] = useState("");
   const [storeName, setStoreName] = useState("");
   const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
   const [result, setResult] = useState<ResultData | null>(null);
@@ -443,6 +444,7 @@ export function ComplianceQuiz() {
           firstName: firstName.trim(),
           storeName: storeName.trim(),
           email: email.trim(),
+          phone: phone.trim(),
           score: computed.score,
           scorePercent: computed.scorePercent,
           gaps: computed.gaps,
@@ -606,6 +608,20 @@ export function ComplianceQuiz() {
                 autoComplete="email"
                 value={email}
                 onChange={(event) => setEmail(event.target.value)}
+              />
+            </div>
+            <div className="space-y-2">
+              <Label htmlFor="phone" className="text-grably-text">
+                Phone Number (optional)
+              </Label>
+              <Input
+                id="phone"
+                name="phone"
+                type="tel"
+                autoComplete="tel"
+                placeholder="604 555 0123"
+                value={phone}
+                onChange={(event) => setPhone(event.target.value)}
               />
             </div>
           </div>

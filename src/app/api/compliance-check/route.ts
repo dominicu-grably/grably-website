@@ -5,6 +5,7 @@ interface QuizRequestBody {
   firstName?: unknown;
   storeName?: unknown;
   email?: unknown;
+  phone?: unknown;
   score?: unknown;
   scorePercent?: unknown;
   gaps?: unknown;
@@ -17,6 +18,7 @@ interface QuizSubmission {
   firstName: string;
   storeName: string;
   email: string;
+  phone: string;
   score: number;
   scorePercent: number;
   gaps: string[];
@@ -103,6 +105,7 @@ export async function POST(request: Request) {
     firstName: body.firstName.trim(),
     storeName: body.storeName.trim(),
     email: body.email.trim(),
+    phone: isNonEmptyString(body.phone) ? body.phone.trim() : "",
     score: typeof body.score === "number" ? body.score : 0,
     scorePercent: typeof body.scorePercent === "number" ? body.scorePercent : 0,
     gaps: toStringArray(body.gaps),
@@ -123,6 +126,7 @@ export async function POST(request: Request) {
     `First Name: ${submission.firstName}`,
     `Store Name: ${submission.storeName}`,
     `Email: ${submission.email}`,
+    `Phone: ${submission.phone || "(not provided)"}`,
     scoreLine,
     `Submitted: ${submission.submittedAt || "—"}`,
   ];
