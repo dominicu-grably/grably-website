@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export function Footer() {
   return (
@@ -22,12 +23,12 @@ export function Footer() {
 
           {/* Centre links */}
           <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-grably-lightgrn">
-            <a
-              href="https://grably.ca"
+            <Link
+              href="/"
               className="transition-colors hover:text-white"
             >
               grably.ca
-            </a>
+            </Link>
             <span aria-hidden="true" className="text-grably-mid">
               |
             </span>
@@ -42,6 +43,8 @@ export function Footer() {
             </span>
             <a
               href="https://dashboard.grably.ca"
+              target="_blank"
+              rel="noopener noreferrer"
               className="transition-colors hover:text-white"
             >
               dashboard.grably.ca
