@@ -6,14 +6,22 @@ import { MDXRemote } from "next-mdx-remote/rsc";
 
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { getAllPosts, getPostBySlug, formatDate } from "@/lib/blog";
+import {
+  getPublishedPosts,
+  getPostBySlug,
+  isPostPublished,
+  formatDate,
+} from "@/lib/blog";
 
 interface PageProps {
   params: { slug: string };
 }
 
+// Re-check publish dates hourly; future posts render on-demand once live.
+export const revalidate = 3600;
+
 export function generateStaticParams() {
-  return getAllPosts().map((post) => ({ slug: post.slug }));
+  return getPublishedPosts().map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({
@@ -21,6 +29,8 @@ export async function generateMetadata({
 }: PageProps): Promise<Metadata> {
   const post = getPostBySlug(params.slug);
   if (!post) return {};
+  // A future-dated post exists on disk but is not yet public → 404.
+  if (!isPostPublished(params.slug)) notFound();
 
   const url = `https://grably.ca/blog/${post.slug}`;
   return {
@@ -65,6 +75,8 @@ const mdxComponents = {
 export default async function BlogPostPage({ params }: PageProps) {
   const post = getPostBySlug(params.slug);
   if (!post) notFound();
+  // Direct-link access before the publish date also 404s.
+  if (!isPostPublished(params.slug)) notFound();
 
   const url = `https://grably.ca/blog/${post.slug}`;
   const jsonLd = {

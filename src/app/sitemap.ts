@@ -1,11 +1,11 @@
 import type { MetadataRoute } from "next";
 
-import { getAllPosts } from "@/lib/blog";
+import { getPublishedPosts } from "@/lib/blog";
 
 const BASE_URL = "https://grably.ca";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const postEntries: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
+  const postEntries: MetadataRoute.Sitemap = getPublishedPosts().map((post) => ({
     url: `${BASE_URL}/blog/${post.slug}`,
     lastModified: post.date,
   }));

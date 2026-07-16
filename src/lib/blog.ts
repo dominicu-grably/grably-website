@@ -59,6 +59,22 @@ export function getPostBySlug(slug: string): BlogPost | null {
   return { ...meta, content };
 }
 
+// Scheduled publishing: a post is live only once its date has arrived.
+function isPublished(post: BlogPostMeta): boolean {
+  return new Date(post.date) <= new Date();
+}
+
+// Public-facing surfaces (index, sitemap, static params) use this, so
+// future-dated posts stay hidden until their date passes.
+export function getPublishedPosts(): BlogPostMeta[] {
+  return getAllPosts().filter(isPublished);
+}
+
+export function isPostPublished(slug: string): boolean {
+  const post = getPostBySlug(slug);
+  return post ? isPublished(post) : false;
+}
+
 export function formatDate(date: string): string {
   // Parse at noon UTC and render in UTC to avoid timezone day-shift.
   return new Date(`${date}T12:00:00Z`).toLocaleDateString("en-US", {

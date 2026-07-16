@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-import { getAllPosts, formatDate } from "@/lib/blog";
+import { getPublishedPosts, formatDate } from "@/lib/blog";
 
 export const metadata: Metadata = {
   title: "Blog — Grably",
@@ -14,8 +14,11 @@ export const metadata: Metadata = {
   },
 };
 
+// Re-check publish dates hourly so scheduled posts appear without a redeploy.
+export const revalidate = 3600;
+
 export default function BlogIndexPage() {
-  const posts = getAllPosts();
+  const posts = getPublishedPosts();
 
   return (
     <>
