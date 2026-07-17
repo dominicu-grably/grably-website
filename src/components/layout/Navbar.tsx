@@ -115,11 +115,13 @@ export function Navbar() {
       {/* Mobile slide-down drawer */}
       <div
         className={cn(
-          "overflow-hidden border-t border-grably-mid bg-grably-dark transition-[max-height] duration-300 ease-out md:hidden",
-          mobileOpen ? "max-h-80" : "max-h-0"
+          "border-t border-grably-mid bg-grably-dark transition-[max-height] duration-300 ease-out md:hidden",
+          mobileOpen
+            ? "max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain"
+            : "max-h-0 overflow-hidden"
         )}
       >
-        <div className="flex flex-col gap-1 px-5 py-3">
+        <div className="flex flex-col gap-1 px-5 pt-3 pb-[calc(env(safe-area-inset-bottom)_+_1.5rem)]">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.targetId}
