@@ -32,6 +32,15 @@ export function Footer() {
             <span aria-hidden="true" className="text-grably-mid">
               |
             </span>
+            <Link
+              href="/privacy"
+              className="transition-colors hover:text-white"
+            >
+              Privacy
+            </Link>
+            <span aria-hidden="true" className="text-grably-mid">
+              |
+            </span>
             <a
               href="mailto:hello@grably.ca"
               className="transition-colors hover:text-white"
