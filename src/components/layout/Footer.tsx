@@ -24,10 +24,10 @@ export function Footer() {
           {/* Centre links */}
           <nav className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-grably-lightgrn">
             <Link
-              href="/"
+              href="/#demo-form"
               className="transition-colors hover:text-white"
             >
-              grably.ca
+              Book a Demo
             </Link>
             <span aria-hidden="true" className="text-grably-mid">
               |
@@ -47,17 +47,6 @@ export function Footer() {
             >
               hello@grably.ca
             </a>
-            <span aria-hidden="true" className="text-grably-mid">
-              |
-            </span>
-            <a
-              href="https://dashboard.grably.ca"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-colors hover:text-white"
-            >
-              dashboard.grably.ca
-            </a>
           </nav>
 
           {/* Right tagline */}
@@ -68,7 +57,8 @@ export function Footer() {
 
         {/* Bottom fine print */}
         <p className="mt-10 text-center text-xs text-grably-lightgrn/40">
-          Grably Technologies Inc. © 2026 Grably. All rights reserved.
+          © {new Date().getFullYear()} Grably Technologies Inc. All rights
+          reserved.
         </p>
       </div>
     </footer>
