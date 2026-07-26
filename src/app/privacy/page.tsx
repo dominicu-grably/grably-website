@@ -162,7 +162,7 @@ export default function PrivacyPage() {
             <p>
               Grably Technologies Inc.
               <br />
-              Email: dominicu@grably.ca
+              Email: privacy@grably.ca
               <br />
               Phone: 778-900-8886
             </p>
