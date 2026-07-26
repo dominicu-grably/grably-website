@@ -145,6 +145,36 @@ export default function PrivacyPage() {
               below to make a request.
             </p>
 
+            <h2 id="delete-account">Request account deletion</h2>
+            <p>
+              If you are a driver or retailer staff member with a Grably account
+              and wish to have your account and associated data deleted, contact
+              us at{" "}
+              <a href="mailto:privacy@grably.ca">privacy@grably.ca</a> with the
+              subject line &ldquo;Account Deletion Request&rdquo; and include your
+              registered name and email address.
+            </p>
+            <p>We will process deletion requests within 30 days.</p>
+            <p>
+              <strong>What is deleted:</strong> your account credentials, name,
+              email, phone number, and any device or push notification
+              identifiers associated with your account.
+            </p>
+            <p>
+              <strong>What is retained:</strong> delivery records associated with
+              your account, including proof-of-delivery photographs, signatures,
+              and delivery outcome history, are retained for six years (plus six
+              months following any licence cancellation or transfer) as required
+              under BC&rsquo;s Cannabis Licensing Regulation and LCRB
+              record-keeping rules. This retention applies even after account
+              deletion, as these records are regulatory compliance documentation,
+              not account-management data.
+            </p>
+            <p>
+              If you have questions about what data falls into which category,
+              contact us at the email above.
+            </p>
+
             <h2>Children&rsquo;s privacy</h2>
             <p>
               The Services are not directed at or intended for use by anyone
