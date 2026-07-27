@@ -8,8 +8,7 @@ import { scrollToId } from "@/lib/scroll";
 const INCLUDED: string[] = [
   "1 dispatcher + 2 drivers included",
   "Additional drivers: $19/month each",
-  "Free onboarding (Founding Client benefit)",
-  "GMV commission waived (Founding Client benefit)",
+  "Free onboarding",
   "Cancel anytime — no contracts",
 ];
 
@@ -39,7 +38,7 @@ export function Pricing() {
           <div className="relative rounded-lg border-2 border-grably-accent bg-grably-mid p-8">
             {/* Founding client badge */}
             <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-grably-accent px-3 py-1 text-xs font-bold text-grably-dark">
-              FOUNDING CLIENT
+              GRABLY ESSENTIALS
             </span>
 
             {/* Price */}
@@ -79,8 +78,8 @@ export function Pricing() {
 
             {/* Fine print */}
             <p className="mt-6 text-xs text-grably-lightgrn/50">
-              Founding Client pricing available to first 100 BC retailers.
-              Pricing subject to change with 90 days notice.
+              Available to licensed Canadian cannabis retailers. Pricing
+              subject to change with 90 days notice.
             </p>
           </div>
         </FadeIn>
