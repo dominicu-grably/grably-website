@@ -87,15 +87,14 @@ function copyFor(status: DeliveryStatus | null): StatusCopy {
         timeline: true,
       };
     case "en_route":
+    case "arrived":
+      // Nothing writes 'arrived' today (reserved for a future arrival-detection
+      // feature), but complete-delivery still accepts it as a valid input status,
+      // so map it to the en_route presentation defensively rather than falling
+      // through to the failure group.
       return {
         headline: "On its way",
         body: "Your order is on its way to you.",
-        timeline: true,
-      };
-    case "arrived":
-      return {
-        headline: "Out for delivery",
-        body: "Your driver is arriving now.",
         timeline: true,
       };
     case "completed":
@@ -312,10 +311,13 @@ function Loaded({ data }: { data: TrackingData }) {
 // ── Timeline ──────────────────────────────────────────────────────────────────
 
 function Timeline({ data }: { data: TrackingData }) {
+  // Three stages. The 'arrived' state (deliveries.arrived_at) is never written by
+  // any code path today, so an "Out for delivery" stage would never fill — it's
+  // dropped until arrival detection exists. arrived_at is still returned by the
+  // RPC, so restoring the stage is a one-line change if that ships.
   const stages: { label: string; at: string | null }[] = [
     { label: "With the driver", at: data.picked_up_at },
     { label: "On its way", at: data.en_route_at },
-    { label: "Out for delivery", at: data.arrived_at },
     { label: "Delivered", at: data.completed_at },
   ];
 
