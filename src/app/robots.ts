@@ -15,11 +15,11 @@ const AI_CRAWLERS = [
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: "*", allow: "/", disallow: "/api/" },
+      { userAgent: "*", allow: "/", disallow: ["/api/", "/t/"] },
       ...AI_CRAWLERS.map((userAgent) => ({
         userAgent,
         allow: "/",
-        disallow: "/api/",
+        disallow: ["/api/", "/t/"],
       })),
     ],
     sitemap: "https://grably.ca/sitemap.xml",
