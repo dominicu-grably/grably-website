@@ -49,8 +49,12 @@
   .text-balance {
     text-wrap: balance;
   }
-  /* scroll-margin so sticky navbar doesn't overlap anchored sections */
+  /* scroll-margin so the sticky navbar doesn't overlap anchored sections.
+     MUST match the navbar height exactly (h-16 = 4rem on the <nav> in
+     src/components/layout/Navbar.tsx). Anything larger leaves a visible gap
+     between the navbar and the top of the target section; if the navbar
+     height ever changes, update this constant to match. */
   [id] {
-    scroll-margin-top: 5rem;
+    scroll-margin-top: 4rem;
   }
 }

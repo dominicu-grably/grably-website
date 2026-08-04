@@ -20,6 +20,10 @@ const NAV_LINKS: NavLink[] = [
   { label: "Pricing", targetId: "pricing" },
 ];
 
+// Matches the drawer's `duration-300` max-height transition, plus a frame of
+// slack so the collapse has fully settled before we measure and scroll.
+const DRAWER_COLLAPSE_MS = 320;
+
 export function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const pathname = usePathname();
@@ -27,13 +31,29 @@ export function Navbar() {
   // Anchor links are real hrefs so they work from any route. When already on
   // the homepage, intercept and smooth-scroll instead of navigating.
   const handleAnchor = (targetId: string) => (e: React.MouseEvent) => {
-    if (pathname === "/") {
-      e.preventDefault();
+    const drawerWasOpen = mobileOpen;
+    setMobileOpen(false);
+
+    if (pathname !== "/") {
+      // Let Next.js navigate to "/#targetId"; native hash scroll takes over
+      // (scroll-margin-top is global, so the section clears the sticky header).
+      return;
+    }
+
+    e.preventDefault();
+
+    // Close the drawer first, then scroll. The drawer sits inside the sticky
+    // header at the top of the document, so its height offsets every section
+    // below it. scrollIntoView locks in its target position at call time, so
+    // scrolling while the drawer is still collapsing lands short by whatever
+    // height it has left to shed. requestAnimationFrame isn't enough here:
+    // it fires once React has committed the class change, but the collapse is
+    // a 300ms CSS transition that is still mid-flight at that point.
+    if (drawerWasOpen) {
+      window.setTimeout(() => scrollToId(targetId), DRAWER_COLLAPSE_MS);
+    } else {
       scrollToId(targetId);
     }
-    // else: let Next.js navigate to "/#targetId"; native hash scroll takes over
-    // (scroll-margin-top is global, so the section clears the sticky header).
-    setMobileOpen(false);
   };
 
   return (
