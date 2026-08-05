@@ -3,8 +3,8 @@ export function SocialProof() {
     <section className="bg-grably-accent">
       <div className="mx-auto max-w-6xl px-5 py-4 sm:px-8">
         <p className="text-center font-semibold text-grably-dark">
-          Live with BC cannabis retailers today — including Craft Greenery
-          Cannabis, Vancouver
+          Live with licensed Canadian cannabis retailers today. Every delivery,
+          audit-ready.
         </p>
       </div>
     </section>

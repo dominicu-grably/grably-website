@@ -51,7 +51,7 @@ export function Footer() {
 
           {/* Right tagline */}
           <p className="max-w-xs text-center text-sm text-grably-lightgrn md:text-right">
-            Built for BC Cannabis Retailers. LCRB-Compliant Delivery Dispatch.
+            Canada&apos;s Cannabis Delivery Compliance and Dispatch Platform.
           </p>
         </div>
 

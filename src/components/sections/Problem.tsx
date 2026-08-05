@@ -12,7 +12,7 @@ interface ProblemCard {
 const CARDS: ProblemCard[] = [
   {
     title: "Compliance Risk",
-    body: "WhatsApp threads and spreadsheets don't produce LCRB-compliant delivery records. One audit can mean fines, suspensions, or licence loss.",
+    body: "WhatsApp threads and spreadsheets do not produce provincially compliant delivery records. One compliance inspection without the right documentation can mean fines, suspensions, or licence loss.",
     Icon: AlertTriangle,
     iconClassName: "text-grably-warn",
   },
@@ -39,11 +39,12 @@ export function Problem() {
             The Problem
           </p>
           <h2 className="mt-4 font-serif text-3xl font-bold text-grably-text sm:text-4xl">
-            Delivery in BC Cannabis Is Broken
+            Delivery in Canadian Cannabis Is a Compliance Problem
           </h2>
           <p className="mt-4 text-lg text-grably-textmid">
-            Most retailers are running delivery on duct tape — and carrying full
-            LCRB liability while doing it.
+            Most retailers running delivery today are doing it on informal
+            tools, and carrying full provincial regulatory liability while doing
+            it.
           </p>
         </FadeIn>
 

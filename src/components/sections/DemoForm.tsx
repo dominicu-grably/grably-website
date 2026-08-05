@@ -70,7 +70,7 @@ export function DemoForm() {
             Ready to Run Compliant Delivery?
           </h2>
           <p className="mt-4 text-lg text-grably-dark/70">
-            We onboard you personally. You&apos;ll be live within 24 hours.
+            We onboard you personally. Live within days, not weeks.
           </p>
         </div>
 

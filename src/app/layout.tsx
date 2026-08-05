@@ -6,13 +6,13 @@ const GA_MEASUREMENT_ID = "G-BFCJ6QT4MB";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://grably.ca"),
-  title: "Grably — LCRB-Compliant Cannabis Delivery Dispatch",
+  title: "Grably: Canada's Cannabis Delivery Compliance and Dispatch Platform",
   description:
-    "The only dispatch platform built for BC cannabis retailers. Automate your compliance records, driver coordination, and customer SMS — from the first order.",
+    "Grably gives licensed Canadian cannabis retailers compliant delivery records, driver coordination, and customer communications, automated from the first order. Every delivery, audit-ready.",
   keywords: [
-    "cannabis delivery dispatch BC",
-    "LCRB delivery compliance",
-    "cannabis retailer delivery software BC",
+    "cannabis delivery dispatch Canada",
+    "Canadian cannabis delivery compliance",
+    "cannabis retailer delivery software Canada",
   ],
   applicationName: "Grably",
   authors: [{ name: "Grably" }],
@@ -20,9 +20,9 @@ export const metadata: Metadata = {
     canonical: "https://grably.ca",
   },
   openGraph: {
-    title: "Grably — Every delivery. Audit-ready.",
+    title: "Grably: Every delivery, audit-ready.",
     description:
-      "LCRB-compliant delivery dispatch for licensed BC cannabis retailers. Compliance records, driver coordination, and customer SMS — automated from the first order.",
+      "Compliant delivery dispatch for licensed Canadian cannabis retailers. Compliance records, driver coordination, and customer communications, automated from the first order.",
     url: "https://grably.ca",
     siteName: "Grably",
     locale: "en_CA",
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Grably — Every delivery. Audit-ready.",
+    title: "Grably: Every delivery, audit-ready.",
     description:
-      "LCRB-compliant delivery dispatch for licensed BC cannabis retailers.",
+      "Compliant delivery dispatch for licensed Canadian cannabis retailers.",
   },
   robots: {
     index: true,
@@ -62,7 +62,7 @@ const organizationJsonLd = {
   name: "Grably",
   url: "https://grably.ca",
   description:
-    "Grably gives licensed BC retailers LCRB-compliant delivery records, driver coordination, and customer communications — automated from the first order.",
+    "Grably gives licensed Canadian cannabis retailers compliant delivery records, driver coordination, and customer communications, automated from the first order. Built to meet the most rigorous provincial standards in the country.",
 };
 
 export default function RootLayout({

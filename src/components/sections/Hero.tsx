@@ -32,22 +32,23 @@ export function Hero() {
         <div className="max-w-3xl">
           <FadeIn>
             <p className="text-xs font-bold uppercase tracking-[3px] text-grably-accent">
-              LCRB-Compliant Delivery Dispatch
+              CANADIAN CANNABIS DELIVERY COMPLIANCE
             </p>
           </FadeIn>
 
           <FadeIn className="delay-100">
             <h1 className="mt-6 font-serif text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-6xl">
-              The Only Delivery Dispatch Platform Built for BC Cannabis
+              The Only Delivery Dispatch Platform Built for Canadian Cannabis
               Compliance
             </h1>
           </FadeIn>
 
           <FadeIn className="delay-200">
             <p className="mt-6 max-w-xl text-lg text-grably-lightgrn">
-              Grably gives licensed BC retailers LCRB-compliant delivery
-              records, driver coordination, and customer communications —
-              automated from the first order.
+              Grably gives licensed Canadian cannabis retailers compliant
+              delivery records, driver coordination, and customer
+              communications, automated from the first order. Built to meet the
+              most rigorous provincial standards in the country.
             </p>
           </FadeIn>
 

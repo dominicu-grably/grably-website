@@ -12,7 +12,7 @@ const RECORD_ITEMS: string[] = [
 const CONSEQUENCES: string[] = [
   "Fines up to $100,000",
   "Licence suspension",
-  "Public enforcement action on your permanent LCRB record",
+  "Public enforcement action on your permanent provincial compliance record",
   "Permanent licence loss",
 ];
 
@@ -31,11 +31,12 @@ export function ComplianceRisk() {
             LCRB Compliance
           </p>
           <h2 className="mt-4 font-serif text-3xl font-bold text-white sm:text-4xl">
-            The LCRB Audit Is Real
+            The Compliance Audit Is Real
           </h2>
           <p className="mt-4 text-lg text-grably-lightgrn">
-            LCRB requires retailers to maintain complete, auditable delivery
-            records. Most retailers doing delivery today cannot produce them.
+            Provincial regulators require retailers to maintain complete,
+            auditable delivery records. Most retailers offering delivery today
+            cannot produce them on demand.
           </p>
         </FadeIn>
 
