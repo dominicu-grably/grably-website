@@ -34,7 +34,7 @@ export async function generateMetadata({
 
   const url = `https://grably.ca/blog/${post.slug}`;
   return {
-    title: `${post.title}: Grably Blog`,
+    title: `${post.title} | Grably Blog`,
     description: post.excerpt,
     alternates: {
       canonical: url,
