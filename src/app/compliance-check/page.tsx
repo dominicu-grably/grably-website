@@ -9,7 +9,7 @@ import { ComplianceQuiz } from "@/components/compliance/ComplianceQuiz";
 // quiz logic validates against LCRB rules only, so any broader claim here would
 // overstate what the tool actually checks. National coverage is GRA-160.
 export const metadata: Metadata = {
-  title: "LCRB Delivery Compliance Checker — Grably",
+  title: "LCRB Delivery Compliance Checker: Grably",
   description:
     "Free tool to check if your BC cannabis delivery operation meets LCRB compliance requirements. 7 questions, 2 minutes, instant results.",
   alternates: {
@@ -51,14 +51,14 @@ export default function ComplianceCheckPage() {
       <main className="mx-auto max-w-[620px] px-5 py-12 sm:px-8 sm:py-16">
         <div className="text-center">
           <p className="text-xs font-bold uppercase tracking-widest text-grably-textmid">
-            Free Tool — BC Cannabis Retailers
+            Free Tool: BC Cannabis Retailers
           </p>
           <h1 className="mt-3 font-serif text-3xl font-bold text-grably-text sm:text-4xl">
             Is Your Delivery Operation LCRB Compliant?
           </h1>
           <p className="mt-4 text-grably-textmid">
             7 questions. 2 minutes. Find out exactly where your compliance gaps
-            are — before the LCRB does.
+            are, before the LCRB does.
           </p>
         </div>
 
