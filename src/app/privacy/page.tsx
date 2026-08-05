@@ -4,7 +4,7 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — Grably",
+  title: "Privacy Policy: Grably",
   description:
     "How Grably Technologies Inc. collects, uses, and protects your information.",
   alternates: { canonical: "https://grably.ca/privacy" },

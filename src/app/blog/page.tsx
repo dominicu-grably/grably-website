@@ -6,7 +6,7 @@ import { Footer } from "@/components/layout/Footer";
 import { getPublishedPosts, formatDate } from "@/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog — Grably",
+  title: "Blog: Grably",
   description:
     "Cannabis delivery compliance, dispatch operations, and product updates from Grably.",
   alternates: {
