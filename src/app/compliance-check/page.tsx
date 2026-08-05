@@ -5,17 +5,20 @@ import { Check } from "lucide-react";
 
 import { ComplianceQuiz } from "@/components/compliance/ComplianceQuiz";
 
+// This page stays BC-specific while the rest of the site speaks nationally: the
+// quiz logic validates against LCRB rules only, so any broader claim here would
+// overstate what the tool actually checks. National coverage is GRA-160.
 export const metadata: Metadata = {
   title: "LCRB Delivery Compliance Checker — Grably",
   description:
-    "Find out if your BC cannabis delivery operation is LCRB compliant. 7 questions, 2 minutes, instant results.",
+    "Free tool to check if your BC cannabis delivery operation meets LCRB compliance requirements. 7 questions, 2 minutes, instant results.",
   alternates: {
     canonical: "https://grably.ca/compliance-check",
   },
 };
 
 const TRUST_SIGNALS = [
-  "Used by BC cannabis retailers today",
+  "Built for BC cannabis retailers",
   "Based on actual LCRB delivery inspection requirements",
   "No credit card. No obligation.",
 ];

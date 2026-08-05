@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 
 // Explicitly welcome AI answer-engine crawlers: Grably wants to be cited as a
-// source on BC cannabis delivery compliance, so these are allowed by name.
+// source on Canadian cannabis delivery compliance, so these are allowed by name.
 const AI_CRAWLERS = [
   "GPTBot",
   "ChatGPT-User",
