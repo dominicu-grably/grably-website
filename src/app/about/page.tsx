@@ -37,7 +37,7 @@ export default function AboutPage() {
         <section className="bg-grably-lightgrn">
           <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
             <FadeIn>
-              <p className="text-xs font-bold uppercase tracking-widest text-grably-accent">
+              <p className="text-xs font-bold uppercase tracking-widest text-grably-mid">
                 What We&rsquo;re Building
               </p>
               <p className="mt-4 text-lg text-grably-textmid">
@@ -50,9 +50,7 @@ export default function AboutPage() {
             </FadeIn>
 
             <FadeIn className="mt-12">
-              <hr className="border-t border-grably-lightgrn" />
-
-              <div className="mt-10 border-l-4 border-grably-accent pl-6 text-lg text-grably-textmid">
+              <div className="border-l-4 border-grably-dark pl-6 text-lg text-grably-textmid">
                 <p>
                   Picture the store owner on a Friday night: a dozen deliveries
                   stacked on the dispatch board, two drivers already out, and an
