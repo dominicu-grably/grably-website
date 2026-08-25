@@ -20,7 +20,7 @@ export default function AboutPage() {
         {/* Section 1 — Mission */}
         <section className="bg-grably-offwhite">
           <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
-            <FadeIn className="max-w-2xl">
+            <FadeIn>
               <p className="text-xs font-bold uppercase tracking-widest text-grably-accent">
                 Why We Exist
               </p>
@@ -34,9 +34,9 @@ export default function AboutPage() {
         </section>
 
         {/* Section 2 — Vision */}
-        <section className="bg-grably-offwhite">
+        <section className="bg-grably-lightgrn">
           <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
-            <FadeIn className="max-w-2xl">
+            <FadeIn>
               <p className="text-xs font-bold uppercase tracking-widest text-grably-accent">
                 What We&rsquo;re Building
               </p>
@@ -49,7 +49,7 @@ export default function AboutPage() {
               </p>
             </FadeIn>
 
-            <FadeIn className="mt-12 max-w-2xl">
+            <FadeIn className="mt-12">
               <hr className="border-t border-grably-lightgrn" />
 
               <div className="mt-10 border-l-4 border-grably-accent pl-6 text-lg text-grably-textmid">
@@ -94,7 +94,7 @@ export default function AboutPage() {
           />
 
           <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
-            <FadeIn className="max-w-2xl">
+            <FadeIn>
               <h2 className="font-serif text-3xl font-bold text-white sm:text-4xl">
                 Ready to run compliant delivery?
               </h2>
