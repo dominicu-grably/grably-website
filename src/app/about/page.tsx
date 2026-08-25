@@ -8,7 +8,7 @@ import { Footer } from "@/components/layout/Footer";
 export const metadata: Metadata = {
   title: "About Grably: Why We Built This",
   description:
-    "Grably exists so no licensed cannabis retailer ever loses their licence over a delivery record they couldn't produce. Here is the story behind why we built it.",
+    "Grably exists so no licensed cannabis retailer ever loses their licence over a delivery record they couldn't produce. Here is what we're building for licensed Canadian cannabis retailers.",
   alternates: { canonical: "https://grably.ca/about" },
 };
 
