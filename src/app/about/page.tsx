@@ -34,10 +34,11 @@ export default function AboutPage() {
         </section>
 
         {/* Section 2 — Vision */}
-        <section className="bg-grably-lightgrn">
+        <section className="bg-white">
           <div className="mx-auto max-w-6xl px-5 py-20 sm:px-8">
             <FadeIn>
-              <p className="text-xs font-bold uppercase tracking-widest text-grably-mid">
+              {/* Shares GRA-167's known eyebrow contrast gap (accent on near-white); update here too when that lands. */}
+              <p className="text-xs font-bold uppercase tracking-widest text-grably-accent">
                 What We&rsquo;re Building
               </p>
               <p className="mt-4 text-lg text-grably-textmid">
