@@ -112,6 +112,12 @@ export function Navbar() {
             Blog
           </Link>
           <Link
+            href="/about"
+            className="text-sm font-medium text-grably-lightgrn transition-colors hover:text-white"
+          >
+            About
+          </Link>
+          <Link
             href="/#demo-form"
             onClick={handleAnchor("demo-form")}
             className="rounded bg-grably-accent px-4 py-2 text-sm font-bold text-grably-dark transition-colors hover:bg-grably-adk"
@@ -165,6 +171,13 @@ export function Navbar() {
             className="rounded px-2 py-3 text-left text-base font-medium text-grably-lightgrn transition-colors hover:bg-grably-mid hover:text-white"
           >
             Blog
+          </Link>
+          <Link
+            href="/about"
+            onClick={() => setMobileOpen(false)}
+            className="rounded px-2 py-3 text-left text-base font-medium text-grably-lightgrn transition-colors hover:bg-grably-mid hover:text-white"
+          >
+            About
           </Link>
           <Link
             href="/#demo-form"

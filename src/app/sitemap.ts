@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: BASE_URL },
     { url: `${BASE_URL}/compliance-check` },
     { url: `${BASE_URL}/privacy` },
+    { url: `${BASE_URL}/about` },
     { url: `${BASE_URL}/blog` },
     ...postEntries,
   ];
